@@ -1,0 +1,18 @@
+name: dead-code
+type: agent
+description: |
+  Walks the cumulative session diff for newly exported symbols, new
+  files, and new branches; flags any without an in-tree caller, test,
+  or reachable entry point. Distinguishes library APIs (kept) from
+  accidental dead code (penalized).
+direction: NW
+default_timeout: 60s
+artefact: SKILL.md
+sha256: f770627d737c020174232b105a411800e99390f43a689e9b3d887fa71c210a8a
+agent:
+  agent: claude
+  model: claude-sonnet-4-6
+  thinking: low
+permissions:
+  network: false
+  filesystem: read-only

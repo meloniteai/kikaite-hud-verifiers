@@ -1,0 +1,14 @@
+name: gofmt-check
+type: command
+description: |
+  Runs gofmt -l against the session worktree and reports distance=0
+  when clean, distance=1 when any .go file would be reformatted. No
+  external dependencies beyond gofmt itself; skips quietly with
+  distance=0 if gofmt isn't installed.
+direction: S
+default_timeout: 15s
+artefact: run.sh
+sha256: 5130a4a1c095ab59a4e95c6cef02bcc4800b7707f67e009481d7a8b22c6cc23e
+permissions:
+  network: false
+  filesystem: read-only

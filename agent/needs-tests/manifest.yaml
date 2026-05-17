@@ -1,0 +1,18 @@
+name: needs-tests
+type: agent
+description: |
+  Flags behaviour changes shipped without a matching test in the same
+  session. Splits the diff into source vs. tests, walks the source
+  changes, and scores how much load-bearing new behaviour landed
+  untested. Skips formatting, dependency bumps, and doc edits.
+direction: NE
+default_timeout: 60s
+artefact: SKILL.md
+sha256: c36f4db9bd283893273a1691ee7e435c2112dcc078de418498ce5e17d2c24fea
+agent:
+  agent: claude
+  model: claude-sonnet-4-6
+  thinking: low
+permissions:
+  network: false
+  filesystem: read-only
