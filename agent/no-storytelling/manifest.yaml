@@ -1,0 +1,19 @@
+name: no-storytelling
+type: agent
+description: |
+  Reviews added or modified comments in the cumulative session diff and
+  scores how much storytelling, restatement, or narrative prose has crept
+  into the code. Rewards short, contract-focused comments that explain
+  real non-obvious intent; penalizes block essays and step-by-step
+  narration.
+direction: SE
+default_timeout: 60s
+artefact: SKILL.md
+sha256: 570f89c94b8f275c4d478580448987c2ba8cadc20ffff8fe86733d6cae7bd1a1
+agent:
+  agent: claude
+  model: claude-sonnet-4-6
+  thinking: low
+permissions:
+  network: false
+  filesystem: read-only

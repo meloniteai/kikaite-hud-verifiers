@@ -1,0 +1,18 @@
+name: agents-md
+type: agent
+description: |
+  Checks the cumulative session diff against the root AGENTS.md and every
+  nested AGENTS.md that applies to changed paths. Scores compliance with
+  the applicable instruction hierarchy and names the specific AGENTS.md
+  file and missed instruction in its reason.
+direction: NW
+default_timeout: 180s
+artefact: SKILL.md
+sha256: 9f95db02cc31310ff7ca9ac1cfab5b61eba7068eb34e849d6636e28e061cc6f8
+agent:
+  agent: claude
+  model: claude-sonnet-4-6
+  thinking: low
+permissions:
+  network: false
+  filesystem: read-only
